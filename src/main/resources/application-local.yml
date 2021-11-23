@@ -1,0 +1,9 @@
+server:
+  port: 8080
+servlet:
+  context-path: /api
+spring.mvc.static-path-pattern: /api/**
+spring.datasource.url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+spring.datasource.username: system
+spring.datasource.password: 5de8042e41316338
+spring.datasource.driver-class-name: oracle.jdbc.OracleDriver

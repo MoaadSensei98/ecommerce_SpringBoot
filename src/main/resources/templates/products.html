@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <style>
+        h1 {
+            color: #8DC16B;
+            font-weight: normal;
+            font-size: 40px;
+            font-family: Arial;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 40px calc((100% - (255px * 4)) / 2);
+        }
+        .card{
+            height: 500px;
+            flex: 0 0 215px;
+            margin: 1em 20px;
+            padding-left: 0;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 200px;
+            text-align: center;
+         }
+        img {
+            height: 350px;
+            width: 200px;
+        }
+        .price {
+            color: grey;
+            font-size: 22px;
+        }
+
+        .card button {
+            border: none;
+            outline: 0;
+            padding: 12px;
+            color: white;
+            background-color: #000;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+        .card button:hover {
+            opacity: 0.7;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Lista de productos</title>
+</head>
+<h1>Lista de productos</h1>
+<div class="container">
+    <th:block th:each="products:${productsItems}">
+        <div class="card">
+            <p th:text="${products.id}"></p>
+            <img th:src="${products.image}" alt="Producto"  >
+            <p th:text="${products.product}"></p>
+            <p>
+                <button>Add to Cart</button>
+            </p>
+        </div>
+    </th:block>
+
+</div>
+</body>
+</html>
+</html>
