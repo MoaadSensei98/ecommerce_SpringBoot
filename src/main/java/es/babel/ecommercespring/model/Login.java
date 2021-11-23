@@ -12,7 +12,6 @@ import java.util.Set;
 @Table(name = "login")
 @Component
 @Data
-@AllArgsConstructor
 public class Login {
 
     @Id
@@ -43,8 +42,6 @@ public class Login {
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
-
-    public Product map
 
     @Override
     public boolean equals(Object obj) {
