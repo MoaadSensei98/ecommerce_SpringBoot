@@ -1,7 +1,8 @@
 package es.babel.ecommercespring.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -10,8 +11,8 @@ import java.util.Set;
 @Entity
 @Table(name = "login")
 @Component
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
 public class Login {
 
     @Id
@@ -42,6 +43,8 @@ public class Login {
         result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
+
+    public Product map
 
     @Override
     public boolean equals(Object obj) {

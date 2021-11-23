@@ -1,5 +1,7 @@
 package es.babel.ecommercespring.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -7,8 +9,8 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "products")
-@Getter
-@Setter
+@Data
+@AllArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
