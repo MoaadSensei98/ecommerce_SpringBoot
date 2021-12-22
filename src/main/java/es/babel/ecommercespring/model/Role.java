@@ -1,15 +1,13 @@
 package es.babel.ecommercespring.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
+
 public class Authority {
 
 	@Id
@@ -20,4 +18,11 @@ public class Authority {
 	private String authority;
 
 
+	public String getAuthority() {
+		return authority;
+	}
+
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
 }

@@ -1,22 +1,17 @@
 package es.babel.ecommercespring.controller;
 
 import es.babel.ecommercespring.model.Login;
-import es.babel.ecommercespring.model.Product;
-import es.babel.ecommercespring.service.LoginService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.List;
-import java.util.Objects;
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-public class LoginController {
-    @GetMapping({"/","/login"})
+public class UserController {
+
+    @GetMapping({"/", "/login"})
     public String index() {
         return "index";
     }
@@ -36,9 +31,20 @@ public class LoginController {
         return "admin";
     }
 
+    @GetMapping("/403")
+    public String error403() {
+        return "403";
+    }
+
     @RequestMapping(value = {"/products"}, method = RequestMethod.POST)
-    public String productList(HttpServletRequest request,HttpServletResponse response)
-    {
+    public String productList() {
         return "redirect:/products";
     }
+
+    @RequestMapping(value = {"/register"}, method = RequestMethod.GET)
+    public String register() {
+        return "register";
+    }
+
+
 }
