@@ -1,29 +1,51 @@
 package es.babel.ecommercespring.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "products")
-@Data
-@AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String product;
+    private String productname;
     private String image;
+    private int price;
 
-    public Product() {
+    public Long getId() {
+        return id;
     }
 
-    public Product(Long id, String product) {
+    public void setId(Long id) {
         this.id = id;
-        this.product = product;
     }
 
+    public String getProductname() {
+        return productname;
+    }
+
+    public void setProductname(String productName) {
+        this.productname = productName;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
 }

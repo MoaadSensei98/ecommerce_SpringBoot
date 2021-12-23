@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>Login Ecommerce</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css">
+<script src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+<style>
+    body {
+        background: linear-gradient(-45deg, #000000, #ffffff, #23a6d5, yellow);
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0% 50%;
+        }
+    }
+
+    h2,p {
+        color: white;
+        text-align: center;
+        font-family: Calibri;
+    }
+
+    .main-section {
+        margin: 0 auto;
+        margin-top: 25%;
+        padding: 0;
+    }
+
+    .modal-content {
+        background-color: #3b4652;
+        opacity: .85;
+        padding: 0 20px;
+        box-shadow: 0px 0px 3px #848484;
+    }
+
+    .user-img {
+        margin-top: -50px;
+        margin-bottom: 35px;
+    }
+
+    .user-img img {
+        width: 100px;
+        height: 100px;
+        box-shadow: 0px 0px 3px #848484;
+        border-radius: 50%;
+    }
+
+    .form-group input {
+        height: 42px;
+        font-size: 18px;
+        border: 0;
+        padding-left: 54px;
+        border-radius: 5px;
+    }
+
+    .form-group::before {
+        font-family: "Font Awesome\ 5 Free";
+        position: absolute;
+        left: 28px;
+        font-size: 22px;
+        padding-top: 4px;
+    }
+
+    .form-group#user-group::before {
+        content: "\f007";
+    }
+
+    .form-group#name-group::before {
+        content: "\f0c0";
+    }
+
+    .form-group#mail-group::before {
+        content: "\f0e0";
+    }
+
+    .form-group#contrasena-group::before {
+        content: "\f023";
+    }
+
+    button {
+        width: 60%;
+        margin: 5px 0 25px;
+    }
+</style>
+</head>
+<body>
+<div class="modal-dialog text-center">
+    <div class="col-sm-8 main-section">
+        <div class="modal-content">
+            <div class="col-12 user-img">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Circle-icons-profile.svg"/>
+            </div>
+            <form method="POST" class="form-signin" th:action="@{/registration}">
+                <h2 class="form-signin-heading">Registrar usuario</h2>
+                <div class="form-group" id="name-group">
+                    <input type="text" name="username" class="form-control" placeholder="Nombre de usuario"
+                           autofocus="true">
+                </div>
+                <div class="form-group" id="contrasena-group">
+                    <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Crear</button>
+            </form>
+            <p>Tienes ya un usuario? vuelve al <a href="login">login</a></p>
+            <div th:if="${param.success}">
+                <div class="alert alert-info">Usuario creado satisfactoriamente!
+                </div>
+            </div>
+            <div th:if="${param.failed}">
+                <div class="alert alert-danger">Tienes que rellenar todos los parámentros.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

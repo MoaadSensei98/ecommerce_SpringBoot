@@ -2,8 +2,23 @@ server:
   port: 8080
 servlet:
   context-path: /api
+spring.jpa.database: oracle
 spring.mvc.static-path-pattern: /api/**
-spring.datasource.url: jdbc:oracle:thin:@//localhost:1521/XEPDB1
+spring.datasource.url: jdbc:oracle:thin:@//0e34-83-50-119-30.ngrok.io:1521/XEPDB1
 spring.datasource.username: system
 spring.datasource.password: 5de8042e41316338
+spring:
+  mvc:
+    favicon:
+      enabled=false:
 spring.datasource.driver-class-name: oracle.jdbc.OracleDriver
+
+
+
+ibm.mq.queueManager: QM1
+ibm.mq.channel: DEV.ADMIN.SVRCONN
+ibm.mq.connName: localhost(1414)
+ibm.mq.user: admin
+ibm.mq.password: password
+
+

@@ -1,6 +1,6 @@
 package es.babel.ecommercespring.controller;
 
-import es.babel.ecommercespring.model.Login;
+import es.babel.ecommercespring.model.User;
 import es.babel.ecommercespring.model.Product;
 import es.babel.ecommercespring.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +16,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/products")
-    public String main(Model model, Login user) {
+    public String main(Model model, User user) {
         String Username = user.getUsername();
         model.addAttribute("username", Username );
         List<Product> productList = productService.getAllProducts();

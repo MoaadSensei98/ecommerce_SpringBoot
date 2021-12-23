@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "servlet.spring.mvc.favicon.enabled=false",
+      "type": "java.lang.String",
+      "description": "Description for servlet.spring.mvc.favicon.enabled=false."
+  }
+] }

@@ -1,10 +1,8 @@
 package es.babel.ecommercespring.repository;
 
 import es.babel.ecommercespring.model.User;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
-
-public interface LoginRepository extends CrudRepository<User, Long> {
-    public Optional<User> findByUsername(String username);
+public interface UserRepository extends JpaRepository<User, Long> {
+    User findByUsername(String username);
 }

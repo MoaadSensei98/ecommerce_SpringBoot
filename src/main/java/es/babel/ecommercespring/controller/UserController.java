@@ -1,19 +1,17 @@
 package es.babel.ecommercespring.controller;
 
-import es.babel.ecommercespring.model.Login;
+import es.babel.ecommercespring.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.validation.BindingResult;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
 public class UserController {
-
-    @GetMapping({"/", "/login"})
-    public String index() {
-        return "index";
+    @GetMapping({"/","/login"})
+    public String login() {
+        return "login";
     }
 
     @GetMapping("/menu")
@@ -41,10 +39,7 @@ public class UserController {
         return "redirect:/products";
     }
 
-    @RequestMapping(value = {"/register"}, method = RequestMethod.GET)
-    public String register() {
-        return "register";
-    }
+
 
 
 }

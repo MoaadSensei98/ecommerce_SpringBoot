@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de compra</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Imagen</th>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+    </tr>
+    <th:block th:each="cartItem:${cartList}">
+        <tr>
+            <td><img th:src="${cartItem.product.getImage()}" alt="Producto" width="30" height="30"></td>
+            <td><a th:text="${cartItem.product.getProductname()}"> </a></td>
+            <td><a th:text="${cartItem.quantity}"> </a></td>
+            <td><a th:text="${cartItem.product.getPrice()*cartItem.quantity}"> </a><a class="price">€</a></td>
+        </tr>
+    </th:block>
+</table>
+
+</body>
+</html>
